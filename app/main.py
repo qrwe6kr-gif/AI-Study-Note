@@ -1,5 +1,6 @@
 # app/main.py
 from fastapi import FastAPI, Depends, HTTPException, status
+from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
 from typing import List
 
@@ -16,7 +17,6 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],  # 모든 출처 허용 (개발용)
     allow_credentials=True,
-    allow_methods=["*"],
     allow_methods=["*"],
     allow_headers=["*"],
 )
